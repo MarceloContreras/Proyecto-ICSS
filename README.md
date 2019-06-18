@@ -175,7 +175,41 @@ Los casos del elipse y triangulo son particulares ya que no son funciones como t
         y = round(-sqrt(r**2-((i-h)**2))+k)
         matriz[-int(y)-2][i+1] = "x"
 
+    y = round(sqrt(r**2-((i-h)**2))+k)
+    y = round(-sqrt(r**2-((i-h)**2))+k)
+    
+Por último, se esta la opción de imprimir que tan solo debe imprimir cada lista de manera vertical con un formato donde no haya corchetes y comillas por los strings
 
+def impresion():
+    for i in range(44):
+        print(*matriz[i], sep=" ")
+        
+# Memoria
+
+Python tiene la capacidad de manejar archivos .txt, el modo w es para write o escribir, a para append o escribir al final y r para read o leer. El acceso se da mediane el comando with con el nombre del archivo, el modo de uso y un nombre para el archivo como variable.
+
+El primer comando utiliza tambien la posibilidad de un try, except para que si ocurre errores el programa continue en corriendo. 
+IMPORTANTE: Los archivos van a almacenarse en la misma carpeta.
+
+Para leer el archivo tan solo hay que utilizar el comando .read() donde antes del punto hay el nombre del archivo como variable.
+
+def leer(nombre):
+    try:
+        with open(nombre) as f:
+            text = f.read()
+    except FileNotFoundError:
+        text = none
+
+    print(text)
+    
+Para escribir en el archivo se trabaja de la siguiente manera, python escribira en el archivo todo lo que se solia imprimir en la pantalla, por lo que, para este caso, tan solo se debe repetir el comando de impresión pero dentro del comando with con el modo "w".
+
+def escribir(nombre):
+    with open(nombre, "w") as f:
+        for i in range(44):
+            print(*matriz[i], sep=" ", file=f)
+        
+        
 # Participantes
   Oscar De la Cruz Velasquez
   Marcelo Contreras Cabrera
