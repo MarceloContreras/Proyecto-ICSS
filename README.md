@@ -176,12 +176,6 @@ Los casos del elipse y triangulo son particulares ya que no son funciones como t
         matriz[-int(y)-2][i+1] = "x"
 
 
-
-def impresion():
-    for i in range(44):
-        print(*matriz[i], sep=" ")
-
-
 # Participantes
   Oscar De la Cruz Velasquez
   Marcelo Contreras Cabrera
